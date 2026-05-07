@@ -1,0 +1,9 @@
+node_modules/
+
+.env
+.env.local
+.env.production
+
+db.json
+data/db.json
+
