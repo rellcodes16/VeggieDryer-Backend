@@ -8,7 +8,6 @@ async function initDB() {
     authToken: process.env.TURSO_AUTH_TOKEN,
   });
 
-  // DDL statements must be run separately from DML in libSQL batch
   await client.batch([
     {
       sql: `CREATE TABLE IF NOT EXISTS batches (
@@ -44,7 +43,6 @@ async function initDB() {
     },
   ], "write");
 
-  // Insert default settings separately using parameterized query (safe)
   const defaultSettings = JSON.stringify({
     targetTemperature: parseFloat(process.env.DEFAULT_TARGET_TEMP) || 50,
     dryingTimeMinutes: parseFloat(process.env.DEFAULT_DRYING_TIME_MINUTES) || 120,
