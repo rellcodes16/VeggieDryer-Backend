@@ -13,9 +13,12 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://veggiedryer-frontend.onrender.com/",
-    methods: ["GET", "POST"],
-  },
+    origin: [
+      "http://localhost:5173",
+      "https://veggiedryer-frontend.onrender.com"
+    ],
+    methods: ["GET", "POST"]
+  }
 });
 
 app.set("io", io);
