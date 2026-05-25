@@ -11,10 +11,8 @@ dryer-backend/
 ├── server.js                   # Entry point, Socket.IO setup
 ├── .env                        # Environment config
 ├── ESP32_FIRMWARE.ino          # Arduino reference code for ESP32
-├── data/
-│   └── db.json                 # JSON database (auto-created)
 └── src/
-    ├── database.js             # DB init with lowdb
+    ├── database.js             # DB init with turso
     ├── routes/
     │   ├── index.js
     │   ├── batchRoutes.js
